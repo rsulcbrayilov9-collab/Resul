@@ -10,6 +10,48 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="resul.css">
+  
+  <style>
+    /* Mobil menyu üçün əlavə stil */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        min-width: 200px;
+        z-index: 1000;
+      }
+      
+      nav ul.show {
+        display: flex !important;
+      }
+      
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+      
+      .mobile-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-toggle {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -27,6 +69,7 @@
       <!-- MENU -->
       <nav>
         <ul>
+          <li><a href="index.html">Ana Səhifə</a></li>
           <li><a href="haqqımda2.html">Haqqımda</a></li>
           <li><a href="layihə2.html">Layihələr</a></li>
           <li><a href="əlaqə2.html">Əlaqə</a></li>
@@ -64,7 +107,42 @@
     </div>
   </footer>
 
-
+  <!-- JavaScript -->
+  <script>
+    // İl avtomatik yenilənməsi
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Mobil menyu toggle
+    function toggleMobile() {
+      const menu = document.querySelector('nav ul');
+      if (menu) {
+        menu.classList.toggle('show');
+      }
+    }
+    
+    // Menyu xaricinə klik edəndə bağlanması
+    document.addEventListener('click', function(event) {
+      const menu = document.querySelector('nav ul');
+      const toggle = document.querySelector('.mobile-toggle');
+      const nav = document.querySelector('nav');
+      
+      if (menu && toggle && nav) {
+        if (!nav.contains(event.target) && menu.classList.contains('show')) {
+          menu.classList.remove('show');
+        }
+      }
+    });
+    
+    // Menyu elementinə klik edəndə menyunu bağla
+    const menuLinks = document.querySelectorAll('nav ul li a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const menu = document.querySelector('nav ul');
+        if (menu && menu.classList.contains('show')) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
