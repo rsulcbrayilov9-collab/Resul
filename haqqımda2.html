@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haqqımda</title>
+    <link rel="stylesheet" href="resul.css">
+    <style>
+        /* Səhifəni tam mərkəzləşdirmək üçün Flexbox */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* üfüqi mərkəzləşdirmə */
+            align-items: center;    /* şaquli mərkəzləşdirmə */
+            background-color: #04152d; /* istəyə görə fon rəngi */
+            font-family: Arial, sans-serif;
+        }
+
+        #about {
+            max-width: 700px;
+            background-color: #031224;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            text-align: center; /* bütün mətn mərkəzə */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .muted {
+            color: #f9f1f1;
+            line-height: 1.6;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background-color: #061836;
+            color: rgb(252, 252, 252);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .card {
+            background-color: #041c39;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .back-btn {
+            margin-top: 25px;
+            padding: 10px 25px;
+            background-color: #082646;
+            color: rgb(222, 221, 227);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #0e3ea4;
+        }
+
+    </style>
+</head>
+<body>
+<section id="about">
+  <h2>Haqqımda</h2>
+
+  <div class="about-text">
+      <p class="muted">
+        Mən Masallı rayonunda 2007-ci ilin noyabr ayında anadan olmuşam. 2013-cü ildə Masallı rayon Ərkivan qəsəbəsi 
+        Bədirli 2 saylı tam orta məktəbdə təhsil almağa başlamışam və 9 illik təhsili bitirdikdən sonra imtahan verdikdən
+        sonrada ordan aldığım 9 illik attestatla  2023-cü ilin avqust ayında "Cəlilabad Dövlət Peşə Təhsil Mərkəzi"nə 
+        9 illik attestatla qeydiyyatdan keçmişəm və  "Veb Dizayn və Proqram Təminatı" ixtisasına qəbul olunmuşam. 
+        Hazırda həmin ixtisasın üzrə 3-cü kurs tələbəsiyəm.
+      </p>
+
+      <p class="muted">
+        Təhsil aldığım sahədə maraqlı veb səhifələr hazırlayıram. Bundan əlavə, xüsusi istəyə uyğun pankartlar və 
+        vizit kartlar dizayn edirəm. Layihələrimi əsasən istifadəçi təcrübəsinə və performansa əsaslanaraq qururam.
+      </p>
+
+      <p class="muted">Əsas bacarıqlar:</p>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Git</div>
+      </div>
+  </div>
+
+  <div class="card">
+      <h3>Əlavə məlumat</h3>
+      <p class="muted">“Veb dizayn və proqram təminatı sahəsində yenilikçi və səmərəli həllər axtaran bir mütəxəssis.”</p>
+  </div>
+
+  <button onclick="history.back()" class="back-btn">Geri</button>
+</section>
+</body>
+</html>
